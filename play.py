@@ -1,4 +1,4 @@
-mport TH as TH
+import th as TH
 import pygame as pygame
 
 from snake import *
@@ -23,7 +23,7 @@ def play_game():
     pygame.init()
     environ['SDL_VIDEO_CENTERED'] = '1'
     pygame.display.set_caption("Snake Game")
-    game_surface = pygame.display.set_mode((WID,TH,HEIGHT))
+    game_surface = pygame.display.set_mode((WIDTH,HEIGHT))
     clock = pygame.time.Clock()
     snake = Snake(game_surface)
 
