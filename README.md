@@ -1,3 +1,3 @@
 # snake-game
- ai snake game project with bfs 
+ ai-snake-game-project-with-bfs-algorithm 
  
