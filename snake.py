@@ -3,6 +3,7 @@ from settings import *
 from copy import deepcopy
 from random import randrange
 
+import time
 
 class Square:
     def __init__(self, pos, surface, is_apple=False):
@@ -81,6 +82,22 @@ class Snake:
         self.is_virtual_snake = False
         self.total_moves = 0
         self.won_game = False
+
+    def show_score(self,choice, color, font, size):
+        # creating font object score_font
+        score_font = pygame.font.SysFont(font, size)
+
+        # create the display surface object
+        # score_surface
+        score_surface = score_font.render('Score : ' + str(self.score), True, color)
+
+        # create a rectangular object for the text
+        # surface object
+        score_rect = score_surface.get_rect()
+
+        # displaying text
+
+        game_surface.blit(score_surface, score_rect)
 
     def draw(self):
         self.apple.draw(APPLE_CLR)
@@ -176,7 +193,7 @@ class Snake:
         if self.head.pos == self.apple.pos and not self.is_virtual_snake and not self.won_game:
             self.generate_apple()
             self.moves_without_eating = 0
-            self.score += 1
+            self.score += 10
             return True
 
     def go_to(self, position):  # Set head direction to target position

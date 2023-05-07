@@ -19,11 +19,13 @@ def draw_grid(surface):
         pygame.draw.line(surface, GRID_CLR, (0, y), (WIDTH, y))
 
 
+
 def play_game():
+
     pygame.init()
     environ['SDL_VIDEO_CENTERED'] = '1'
     pygame.display.set_caption("Snake Game")
-    game_surface = pygame.display.set_mode((WIDTH,HEIGHT))
+   # game_surface = pygame.display.set_mode((WIDTH,HEIGHT))
     clock = pygame.time.Clock()
     snake = Snake(game_surface)
 
@@ -33,9 +35,11 @@ def play_game():
         draw_grid(game_surface)
 
         snake.update()
-
+        snake.show_score(1, white, 'times new roman', 20)
         clock.tick(FPS)
         pygame.display.update()
+
+
 
 
 if __name__ == '__main__':
